@@ -37,7 +37,22 @@ const gameController = (function() {
                 currentPlayer = playerOne;
             }
         }
-    })
 
+        // All the logic for horizontal win conditions
+
+        if (gameBoardArray[0] && gameBoardArray[1] && gameBoardArray [2] === playerOne.marker) {
+            console.log('hi')
+        } if (gameBoardArray[0] && gameBoardArray[1] && gameBoardArray [2] === playerTwo.marker){
+            console.log('hi')
+        } if (gameBoardArray[3] && gameBoardArray[4] && gameBoardArray [5] === playerOne.marker) {
+            console.log('hi')
+        } if (gameBoardArray[3] && gameBoardArray[4] && gameBoardArray [5] === playerTwo.marker) {
+            console.log('hi')
+        } if (gameBoardArray[6] && gameBoardArray[7] && gameBoardArray [8] === playerOne.marker) {
+            console.log('hi')
+        } if (gameBoardArray[6] && gameBoardArray[7] && gameBoardArray [8] === playerTwo.marker) {
+            console.log('hi')
+        }
+    })
 })();
 
