@@ -1,7 +1,7 @@
 const gameBoardContainer = document.querySelector('.game-board-container');
-let gameBoardArray = ['X', 'O', 'X', 'O', 'X', 'X', 'O', 'X', 'O'];
+let gameBoardArray = ['', '', '', '', '', '', '', '', ''];
 
-const gameBoard = (function() {
+const gameBoard = (function(gridCell) {
     gameBoardArray.forEach(cell => {
         let gridCell = document.createElement('div');
         gridCell.classList.add('grid-cell');
@@ -10,13 +10,13 @@ const gameBoard = (function() {
     })
 })();
 
-const gameFlow = (function() {
-
-})();
-
 // const createPlayer = ({
 
 // });
 
 // const playerOne = createPlayer();
 // const playerTwo = createPlayer();
+
+const gameController = (function() {
+
+})();
