@@ -36,6 +36,18 @@ const gameController = (function() {
             } else {
                 currentPlayer = playerOne;
             }
+
+            function displayWinPlayerO() {
+                
+            }
+
+            function displayWinPlayerX() {
+
+            }
+
+            function displayTie() {
+
+            }
         }
 
         // Horizontal win conditions
@@ -81,6 +93,12 @@ const gameController = (function() {
         } if (gameBoardArray[2] === playerTwo.marker && gameBoardArray[4] === playerTwo.marker && gameBoardArray [6] === playerTwo.marker) {
             console.log('hi')
         } 
+
+        // Tie condition
+
+        if (!gameBoardArray.includes('')) {
+            
+        }   
 
     })
 })();
