@@ -27,7 +27,8 @@ const gameController = (function() {
             event.target.innerHTML = currentPlayer.marker;
 
             if ((gameBoardArray[event.target.dataset.index])  !== '') {
-                // disable that cell clicking 
+                event.target.style.cursor = 'default';
+                event.target.style.pointerEvents = "none";
             }
 
             if (currentPlayer === playerOne) {
