@@ -70,6 +70,18 @@ const gameController = (function() {
             console.log('hi')
         }
 
+        // Diagonal win conditions
+
+        if (gameBoardArray[0] === playerOne.marker && gameBoardArray[4] === playerOne.marker && gameBoardArray [8] === playerOne.marker) {
+            console.log('hi')
+        } if (gameBoardArray[0] === playerTwo.marker && gameBoardArray[4] === playerTwo.marker && gameBoardArray [8] === playerTwo.marker) {
+            console.log('hi')
+        } if (gameBoardArray[2] === playerOne.marker && gameBoardArray[4] === playerOne.marker && gameBoardArray [6] === playerOne.marker) {
+            console.log('hi')
+        } if (gameBoardArray[2] === playerTwo.marker && gameBoardArray[4] === playerTwo.marker && gameBoardArray [6] === playerTwo.marker) {
+            console.log('hi')
+        } 
+
     })
 })();
 
