@@ -7,10 +7,10 @@
 .game-board-container {
     height: var(--grid-size);
     width: var(--grid-size);
-    position: absolute;
     background-color: white;
     display: flex;
     flex-wrap: wrap;
+    position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -59,10 +59,12 @@ body {
 .congratulation-display {
     font-size: 1.5rem;
     font-family: 'Roboto', sans-serif;
-    border: 2px solid red;
     width: 50%;
     text-align: center;
-    justify-self: center;
+    position: absolute;
+    top: 82%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 .page-title {
