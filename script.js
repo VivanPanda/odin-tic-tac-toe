@@ -26,6 +26,10 @@ const gameController = (function() {
             gameBoardArray.splice(event.target.dataset.index, 1, currentPlayer.marker)
             event.target.innerHTML = currentPlayer.marker;
 
+            if ((gameBoardArray[event.target.dataset.index])  !== '') {
+                // disable that cell clicking 
+            }
+
             if (currentPlayer === playerOne) {
                 currentPlayer = playerTwo;
             } else {
