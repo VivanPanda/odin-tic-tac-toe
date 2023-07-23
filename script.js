@@ -56,17 +56,17 @@ const gameController = (function() {
 
         // Vertical win conditions 
 
-        if (gameBoardArray[0] && gameBoardArray[3] && gameBoardArray [6] === playerOne.marker) {
+        if (gameBoardArray[0] === playerOne.marker && gameBoardArray[3] === playerOne.marker && gameBoardArray [6] === playerOne.marker) {
             console.log('hi')
-        } if (gameBoardArray[0] && gameBoardArray[3] && gameBoardArray [6] === playerTwo.marker){
+        } if (gameBoardArray[0] === playerTwo.marker && gameBoardArray[3] === playerTwo.marker && gameBoardArray [6] === playerTwo.marker){
             console.log('hi')
-        } if (gameBoardArray[1] && gameBoardArray[4] && gameBoardArray [7] === playerOne.marker) {
+        } if (gameBoardArray[1] === playerOne.marker && gameBoardArray[4] === playerOne.marker && gameBoardArray [7] === playerOne.marker) {
             console.log('hi')
-        } if (gameBoardArray[1] && gameBoardArray[4] && gameBoardArray [7] === playerTwo.marker) {
+        } if (gameBoardArray[1] === playerTwo.marker && gameBoardArray[4] === playerTwo.marker && gameBoardArray [7] === playerTwo.marker) {
             console.log('hi')
-        } if (gameBoardArray[2] && gameBoardArray[5] && gameBoardArray [8] === playerOne.marker) {
+        } if (gameBoardArray[2] === playerOne.marker && gameBoardArray[5] === playerOne.marker && gameBoardArray [8] === playerOne.marker) {
             console.log('hi')
-        } if (gameBoardArray[2] && gameBoardArray[5] && gameBoardArray [8] === playerTwo.marker) {
+        } if (gameBoardArray[2] === playerTwo.marker && gameBoardArray[5] === playerTwo.marker && gameBoardArray [8] === playerTwo.marker) {
             console.log('hi')
         }
 
