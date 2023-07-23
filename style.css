@@ -99,3 +99,26 @@ table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
+
+
+@media (max-width: 600px) {
+    :root {
+        --grid-size: 35vh;
+    }
+    
+    .game-board-container {
+        height: var(--grid-size);
+        width: var(--grid-size);
+    }
+    
+    .grid-cell {
+        height: calc(var(--grid-size) / 3 - 2px);
+        width: calc(var(--grid-size) / 3 - 2px);
+        font-size: 2rem;
+    }
+
+    .page-title {
+        font-size: 2rem;
+    }
+    
+}
