@@ -7,7 +7,12 @@ const gameBoard = (function(gridCell) {
         gridCell.classList.add('grid-cell');
         gridCell.innerHTML = cell;
         gameBoardContainer.appendChild(gridCell)
+
+        gridCell.addEventListener('click', () => {
+            gameBoardArray.splice(2, 1, 'X') 
+         })
     })
+
 })();
 
 // const createPlayer = ({
