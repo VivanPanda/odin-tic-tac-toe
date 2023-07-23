@@ -4,7 +4,7 @@
     --grid-size: 50vh;
 }
 
-.game-container {
+.game-board-container {
     height: var(--grid-size);
     width: var(--grid-size);
     position: absolute;
@@ -23,6 +23,11 @@
     width: calc(var(--grid-size) / 3 - 2px);
     background-color: white;
     border: 1px solid black;
+    font-size: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Roboto', sans-serif;
 }
 
 body {
