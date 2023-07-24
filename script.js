@@ -19,8 +19,8 @@ const createPlayer = (name, marker) => {
 }
 
 const gameController = (function() {
-    const playerOne = createPlayer('Player one', 'O');
-    const playerTwo = createPlayer('Player two', 'X');
+    const playerOne = createPlayer('Player O', 'O');
+    const playerTwo = createPlayer('Player X', 'X');
     currentPlayer = playerOne;
 
     gameBoardContainer.addEventListener('click', function(event) {
@@ -40,11 +40,11 @@ const gameController = (function() {
             }
 
             function displayWinPlayerO() {
-                congratulationMessage.innerHTML = playerOne.marker + ' won the game.'
+                congratulationMessage.innerHTML = playerOne.name + ' won the game.'
             }
 
             function displayWinPlayerX() {
-                congratulationMessage.innerHTML = playerTwo.marker + ' won the game.'
+                congratulationMessage.innerHTML = playerTwo.name + ' won the game.'
             }
 
             function displayTie() {
@@ -106,5 +106,9 @@ const gameController = (function() {
                 checkTieCondition();
             }
         }
+    })
+
+    restartButton.addEventListener('click', () => {
+        location.reload();
     })
 })();
