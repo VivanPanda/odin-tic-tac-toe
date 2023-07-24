@@ -1,6 +1,8 @@
 const gameBoardContainer = document.querySelector('.game-board-container');
 const congratulationMessage = document.querySelector(".congratulation-message");
-const restartButton = document.querySelector('.restart-button')
+const restartButton = document.querySelector('.restart-button');
+const startGameForm = document.querySelector('.start-game-form');
+const startGameButton = document.querySelector('.start-game-button');
 let currentPlayer;
 
 const gameBoard = (function() {
@@ -19,6 +21,14 @@ const createPlayer = (name, marker) => {
 }
 
 const gameController = (function() {
+    gameBoardContainer.style.display = 'none';
+    startGameButton.addEventListener('click', function(event) {
+        event.preventDefault();
+        startGameForm.style.display = 'none';
+        gameBoardContainer.style.display = 'inherit';
+    })
+
+
     const playerOne = createPlayer('Player O', 'O');
     const playerTwo = createPlayer('Player X', 'X');
     currentPlayer = playerOne;
@@ -109,6 +119,6 @@ const gameController = (function() {
     })
 
     restartButton.addEventListener('click', () => {
-        location.reload();
+        
     })
 })();
