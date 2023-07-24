@@ -1,4 +1,5 @@
 const gameBoardContainer = document.querySelector('.game-board-container');
+const congratulationMessage = document.querySelector(".congratulation-message")
 let currentPlayer;
 
 const gameBoard = (function() {
@@ -38,68 +39,67 @@ const gameController = (function() {
             }
 
             function displayWinPlayerO() {
-                
+                congratulationMessage.innerHTML = playerOne.marker + ' won the game.'
             }
 
             function displayWinPlayerX() {
-
+                congratulationMessage.innerHTML = playerTwo.marker + ' won the game.'
             }
 
             function displayTie() {
-
+                congratulationMessage.innerHTML = 'It was a tie, no one won the game.'
             }
         }
 
         // Horizontal win conditions
 
         if (gameBoardArray[0] === playerOne.marker && gameBoardArray[1] === playerOne.marker && gameBoardArray [2] === playerOne.marker) {
-            console.log('win!')
+            displayWinPlayerO();
         } if (gameBoardArray[0] === playerTwo.marker && gameBoardArray[1] === playerTwo.marker && gameBoardArray [2] === playerTwo.marker){
-            console.log('win!')
+            displayWinPlayerX();
         } if (gameBoardArray[3] === playerOne.marker && gameBoardArray[4] === playerOne.marker && gameBoardArray [5] === playerOne.marker) {
-            console.log('win!')
+            displayWinPlayerO();
         } if (gameBoardArray[3] === playerTwo.marker && gameBoardArray[4] === playerTwo.marker && gameBoardArray [5] === playerTwo.marker) {
-            console.log('win!')
+            displayWinPlayerX();
         } if (gameBoardArray[6] === playerOne.marker && gameBoardArray[7] === playerOne.marker && gameBoardArray [8] === playerOne.marker) {
-            console.log('win!')
+            displayWinPlayerO();
         } if (gameBoardArray[6] === playerTwo.marker && gameBoardArray[7] === playerTwo.marker && gameBoardArray [8] === playerTwo.marker) {
-            console.log('win!')
+            displayWinPlayerX();
         }
 
         // Vertical win conditions 
 
         if (gameBoardArray[0] === playerOne.marker && gameBoardArray[3] === playerOne.marker && gameBoardArray [6] === playerOne.marker) {
-            console.log('win!')
+            displayWinPlayerO();
         } if (gameBoardArray[0] === playerTwo.marker && gameBoardArray[3] === playerTwo.marker && gameBoardArray [6] === playerTwo.marker){
-            console.log('win!')
+            displayWinPlayerX();
         } if (gameBoardArray[1] === playerOne.marker && gameBoardArray[4] === playerOne.marker && gameBoardArray [7] === playerOne.marker) {
-            console.log('win!')
+            displayWinPlayerO();
         } if (gameBoardArray[1] === playerTwo.marker && gameBoardArray[4] === playerTwo.marker && gameBoardArray [7] === playerTwo.marker) {
-            console.log('win!')
+            displayWinPlayerX();
         } if (gameBoardArray[2] === playerOne.marker && gameBoardArray[5] === playerOne.marker && gameBoardArray [8] === playerOne.marker) {
-            console.log('win!')
+            displayWinPlayerO();
         } if (gameBoardArray[2] === playerTwo.marker && gameBoardArray[5] === playerTwo.marker && gameBoardArray [8] === playerTwo.marker) {
-            console.log('win!')
+            displayWinPlayerX();
         }
 
         // Diagonal win conditions
 
         if (gameBoardArray[0] === playerOne.marker && gameBoardArray[4] === playerOne.marker && gameBoardArray [8] === playerOne.marker) {
-            console.log('win!')
+            displayWinPlayerO();
         } if (gameBoardArray[0] === playerTwo.marker && gameBoardArray[4] === playerTwo.marker && gameBoardArray [8] === playerTwo.marker) {
-            console.log('win!')
+            displayWinPlayerX();
         } if (gameBoardArray[2] === playerOne.marker && gameBoardArray[4] === playerOne.marker && gameBoardArray [6] === playerOne.marker) {
-            console.log('win!')
+            displayWinPlayerO();
         } if (gameBoardArray[2] === playerTwo.marker && gameBoardArray[4] === playerTwo.marker && gameBoardArray [6] === playerTwo.marker) {
-            console.log('win!')
+            displayWinPlayerX();
         } 
 
         // Tie condition
 
         if (!gameBoardArray.includes('')) {
-            console.log()
+            displayTie();
         }   
-
     })
 })();
 
