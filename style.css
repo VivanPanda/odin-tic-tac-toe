@@ -226,4 +226,59 @@ table {
         transform: translate(-50%, -50%);
     }
     
+    .start-game-form {
+        position: absolute;
+        top: 30%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 50%;
+    }
+    
+    .name-containers {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 1vh;
+        width: 40vh;
+    }
+    
+    form {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 2vh;
+    }
+    
+    .start-game-button {
+        padding: 1vh 5px;
+        font-family: 'Roboto', sans-serif;
+        font-size: 1.2rem;
+        width: 35vh;
+        background-color: white;
+        border: 1px solid black;
+        border-radius: 5px;
+        color: black;
+    }
+    
+    .name-input {
+        height: 3.5vh;
+        width: 16vh;
+        font-family: 'Roboto', sans-serif;
+        border: 1px solid black;
+        border-radius: 1px;
+    }
+    
+    .name-label {
+        font-size: 1rem;
+    }
+    
+    .name-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 2vh;
+        font-family: 'Roboto', sans-serif;
+    }
 }
