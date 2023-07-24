@@ -83,6 +83,7 @@ form {
     font-family: 'Roboto', sans-serif;
     border: 1px solid black;
     border-radius: 1px;
+    font-size: 17px;
 }
 
 .name-label {
