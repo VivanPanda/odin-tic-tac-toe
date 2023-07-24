@@ -59,6 +59,8 @@ const gameController = (function() {
                     (gameBoardArray[6] === marker && gameBoardArray[7] === marker && gameBoardArray[8] === marker)
                 ) {
                     restartButton.style.display = 'initial';
+                    gameBoardContainer.style.cursor = 'default';
+                    gameBoardContainer.style.pointerEvents = "none";
                     return true;
                 }
 
@@ -69,6 +71,8 @@ const gameController = (function() {
                     (gameBoardArray[2] === marker && gameBoardArray[5] === marker && gameBoardArray[8] === marker)
                 ) {
                     restartButton.style.display = 'initial';
+                    gameBoardContainer.style.cursor = 'default';
+                    gameBoardContainer.style.pointerEvents = "none";
                     return true;
                 }
 
@@ -78,6 +82,8 @@ const gameController = (function() {
                     (gameBoardArray[2] === marker && gameBoardArray[4] === marker && gameBoardArray[6] === marker)
                 ) {
                     restartButton.style.display = 'initial';
+                    gameBoardContainer.style.cursor = 'default';
+                    gameBoardContainer.style.pointerEvents = "none";
                     return true;
                 }
                 return false;
@@ -85,6 +91,9 @@ const gameController = (function() {
 
             function checkTieCondition() {
                 if (!gameBoardArray.includes('') && !checkWinCondition(playerOne.marker) && !checkWinCondition(playerTwo.marker)) {
+                    restartButton.style.display = 'initial';
+                    gameBoardContainer.style.cursor = 'default';
+                    gameBoardContainer.style.pointerEvents = "none";
                     displayTie();
                 }
             }
