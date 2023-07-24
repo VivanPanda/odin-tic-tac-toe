@@ -1,5 +1,5 @@
 const gameBoardContainer = document.querySelector('.game-board-container');
-const congratulationMessage = document.querySelector(".congratulation-message")
+const congratulationMessage = document.querySelector(".congratulation-message");
 let currentPlayer;
 
 const gameBoard = (function() {
@@ -49,66 +49,50 @@ const gameController = (function() {
             function displayTie() {
                 congratulationMessage.innerHTML = 'It was a tie, no one won the game.'
             }
-        }
 
-        function checkWinCondition() {
-            // Horizontal win conditions
+            function checkWinCondition(marker) {
+                // Horizontal win conditions
+                if (
+                    (gameBoardArray[0] === marker && gameBoardArray[1] === marker && gameBoardArray[2] === marker) ||
+                    (gameBoardArray[3] === marker && gameBoardArray[4] === marker && gameBoardArray[5] === marker) ||
+                    (gameBoardArray[6] === marker && gameBoardArray[7] === marker && gameBoardArray[8] === marker)
+                ) {
+                    return true;
+                }
 
-            if (gameBoardArray[0] === playerOne.marker && gameBoardArray[1] === playerOne.marker && gameBoardArray [2] === playerOne.marker) {
-                displayWinPlayerO();
-            } if (gameBoardArray[0] === playerTwo.marker && gameBoardArray[1] === playerTwo.marker && gameBoardArray [2] === playerTwo.marker){
-                displayWinPlayerX();
-            } if (gameBoardArray[3] === playerOne.marker && gameBoardArray[4] === playerOne.marker && gameBoardArray [5] === playerOne.marker) {
-                displayWinPlayerO();
-            } if (gameBoardArray[3] === playerTwo.marker && gameBoardArray[4] === playerTwo.marker && gameBoardArray [5] === playerTwo.marker) {
-                displayWinPlayerX();
-            } if (gameBoardArray[6] === playerOne.marker && gameBoardArray[7] === playerOne.marker && gameBoardArray [8] === playerOne.marker) {
-                displayWinPlayerO();
-            } if (gameBoardArray[6] === playerTwo.marker && gameBoardArray[7] === playerTwo.marker && gameBoardArray [8] === playerTwo.marker) {
-                displayWinPlayerX();
+                // Vertical win conditions
+                if (
+                    (gameBoardArray[0] === marker && gameBoardArray[3] === marker && gameBoardArray[6] === marker) ||
+                    (gameBoardArray[1] === marker && gameBoardArray[4] === marker && gameBoardArray[7] === marker) ||
+                    (gameBoardArray[2] === marker && gameBoardArray[5] === marker && gameBoardArray[8] === marker)
+                ) {
+                    return true;
+                }
+
+                // Diagonal win conditions
+                if (
+                    (gameBoardArray[0] === marker && gameBoardArray[4] === marker && gameBoardArray[8] === marker) ||
+                    (gameBoardArray[2] === marker && gameBoardArray[4] === marker && gameBoardArray[6] === marker)
+                ) {
+                    return true;
+                }
+
+                return false;
             }
 
-            // Vertical win conditions 
-
-            if (gameBoardArray[0] === playerOne.marker && gameBoardArray[3] === playerOne.marker && gameBoardArray [6] === playerOne.marker) {
-                displayWinPlayerO();
-            } if (gameBoardArray[0] === playerTwo.marker && gameBoardArray[3] === playerTwo.marker && gameBoardArray [6] === playerTwo.marker){
-                displayWinPlayerX();
-            } if (gameBoardArray[1] === playerOne.marker && gameBoardArray[4] === playerOne.marker && gameBoardArray [7] === playerOne.marker) {
-                displayWinPlayerO();
-            } if (gameBoardArray[1] === playerTwo.marker && gameBoardArray[4] === playerTwo.marker && gameBoardArray [7] === playerTwo.marker) {
-                displayWinPlayerX();
-            } if (gameBoardArray[2] === playerOne.marker && gameBoardArray[5] === playerOne.marker && gameBoardArray [8] === playerOne.marker) {
-                displayWinPlayerO();
-            } if (gameBoardArray[2] === playerTwo.marker && gameBoardArray[5] === playerTwo.marker && gameBoardArray [8] === playerTwo.marker) {
-                displayWinPlayerX();
-            }
-
-            // Diagonal win conditions
-
-            if (gameBoardArray[0] === playerOne.marker && gameBoardArray[4] === playerOne.marker && gameBoardArray [8] === playerOne.marker) {
-                displayWinPlayerO();
-            } if (gameBoardArray[0] === playerTwo.marker && gameBoardArray[4] === playerTwo.marker && gameBoardArray [8] === playerTwo.marker) {
-                displayWinPlayerX();
-            } if (gameBoardArray[2] === playerOne.marker && gameBoardArray[4] === playerOne.marker && gameBoardArray [6] === playerOne.marker) {
-                displayWinPlayerO();
-            } if (gameBoardArray[2] === playerTwo.marker && gameBoardArray[4] === playerTwo.marker && gameBoardArray [6] === playerTwo.marker) {
-                displayWinPlayerX();
-            } 
-        }
-
-        // Tie condition
-
-        function tieCondition() {
-            if (!checkWinCondition(playerOne.marker) && !checkWinCondition(playerTwo.marker)) {
-                if (!gameBoardArray.includes('')) {
+            function checkTieCondition() {
+                if (!gameBoardArray.includes('') && !checkWinCondition(playerOne.marker) && !checkWinCondition(playerTwo.marker)) {
                     displayTie();
                 }
             }
+
+            if (checkWinCondition(playerOne.marker)) {
+                displayWinPlayerO();
+            } else if (checkWinCondition(playerTwo.marker)) {
+                displayWinPlayerX();
+            } else {
+                checkTieCondition();
+            }
         }
-
-
-        tieCondition();
     })
 })();
-
