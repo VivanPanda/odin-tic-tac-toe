@@ -48,7 +48,6 @@
     top: 25%;
     left: 50%;
     transform: translate(-50%, -50%);
-    border: 2px solid red;
     width: 50%;
 }
 
@@ -60,13 +59,13 @@ form {
 }
 
 .name-input {
-    height: 3.5vh;
+    height: 4vh;
     width: 20vh;
     font-family: 'Roboto', sans-serif;
 }
 
 .name-label {
-    font-size: 10px;
+    font-size: 1.3rem;
 }
 
 .name-container {
@@ -74,7 +73,7 @@ form {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 2px;
+    gap: 2vh;
     font-family: 'Roboto', sans-serif;
 }
 
