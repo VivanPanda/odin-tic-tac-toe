@@ -58,6 +58,7 @@ const gameController = (function() {
                     (gameBoardArray[3] === marker && gameBoardArray[4] === marker && gameBoardArray[5] === marker) ||
                     (gameBoardArray[6] === marker && gameBoardArray[7] === marker && gameBoardArray[8] === marker)
                 ) {
+                    restartButton.style.display = 'initial';
                     return true;
                 }
 
@@ -67,6 +68,7 @@ const gameController = (function() {
                     (gameBoardArray[1] === marker && gameBoardArray[4] === marker && gameBoardArray[7] === marker) ||
                     (gameBoardArray[2] === marker && gameBoardArray[5] === marker && gameBoardArray[8] === marker)
                 ) {
+                    restartButton.style.display = 'initial';
                     return true;
                 }
 
@@ -75,6 +77,7 @@ const gameController = (function() {
                     (gameBoardArray[0] === marker && gameBoardArray[4] === marker && gameBoardArray[8] === marker) ||
                     (gameBoardArray[2] === marker && gameBoardArray[4] === marker && gameBoardArray[6] === marker)
                 ) {
+                    restartButton.style.display = 'initial';
                     return true;
                 }
                 return false;
