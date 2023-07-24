@@ -46,8 +46,15 @@ const gameController = (function() {
     startGameButton.addEventListener('click', function(event) {
         event.preventDefault();
 
-        const playerOneName = document.getElementById('playerO').value;
-        const playerTwoName = document.getElementById('playerX').value;
+        let playerOneName = document.getElementById('playerO').value;
+        let playerTwoName = document.getElementById('playerX').value;
+
+        if (document.getElementById('playerO').value === '') {
+            playerOneName = 'Player O';
+        }
+        if (document.getElementById('playerX').value === '') {
+            playerTwoName = 'Player X';
+        }
 
         const playerOneObj = createPlayer(playerOneName, 'O');
         const playerTwoObj = createPlayer(playerTwoName, 'X');
