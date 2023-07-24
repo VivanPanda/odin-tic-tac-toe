@@ -45,23 +45,45 @@
 
 .start-game-form {
     position: absolute;
-    top: 25%;
+    top: 30%;
     left: 50%;
     transform: translate(-50%, -50%);
     width: 50%;
 }
 
-form {
+.name-containers {
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 3vh;
+    width: 50vh;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2vh;
+}
+
+.start-game-button {
+    padding: 1vh 5px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.1rem;
+    width: 47vh;
+    background-color: white;
+    border: 1px solid black;
+    border-radius: 5px;
+    color: black;
 }
 
 .name-input {
     height: 4vh;
-    width: 20vh;
+    width: 21vh;
     font-family: 'Roboto', sans-serif;
+    border: 1px solid black;
+    border-radius: 1px;
 }
 
 .name-label {
