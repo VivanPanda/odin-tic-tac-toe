@@ -1,5 +1,6 @@
 const gameBoardContainer = document.querySelector('.game-board-container');
 const congratulationMessage = document.querySelector(".congratulation-message");
+const restartButton = document.querySelector('.restart-button')
 let currentPlayer;
 
 const gameBoard = (function() {

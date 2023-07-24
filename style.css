@@ -41,6 +41,10 @@
     border-radius: 5px;
 }
 
+.restart-button:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
 .main-container {
     display: flex;
     flex-direction: column;
