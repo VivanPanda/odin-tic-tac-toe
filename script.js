@@ -76,7 +76,6 @@ const gameController = (function() {
                 ) {
                     return true;
                 }
-
                 return false;
             }
 
