@@ -4,6 +4,8 @@ const restartButton = document.querySelector('.restart-button');
 const startGameForm = document.querySelector('.start-game-form');
 const startGameButton = document.querySelector('.start-game-button');
 let currentPlayer;
+let playerOne; // Move playerOne outside the startGameButton event listener
+let playerTwo; // Move playerTwo outside the startGameButton event listener
 
 const gameBoard = (function() {
     gameBoardArray = ['', '', '', '', '', '', '', '', ''];
@@ -20,18 +22,38 @@ const createPlayer = (name, marker) => {
     return { name, marker };
 }
 
+function startGame(playerOneObj, playerTwoObj) {
+    playerOne = playerOneObj; // Assign playerOneObj to the global playerOne variable
+    playerTwo = playerTwoObj; // Assign playerTwoObj to the global playerTwo variable
+    currentPlayer = playerOne;
+    gameBoardArray = ['', '', '', '', '', '', '', '', ''];
+    const gridCells = document.querySelectorAll('.grid-cell');
+    gridCells.forEach((cell, index) => {
+        cell.innerHTML = gameBoardArray[index];
+        cell.style.cursor = 'pointer';
+        cell.style.pointerEvents = 'auto';
+    });
+    startGameForm.style.display = 'none';
+    gameBoardContainer.style.display = 'inherit';
+    congratulationMessage.innerHTML = '';
+    restartButton.style.display = 'none';
+    gameBoardContainer.style.cursor = 'pointer';
+    gameBoardContainer.style.pointerEvents = 'auto';
+}
+
 const gameController = (function() {
     gameBoardContainer.style.display = 'none';
     startGameButton.addEventListener('click', function(event) {
         event.preventDefault();
-        startGameForm.style.display = 'none';
-        gameBoardContainer.style.display = 'inherit';
+
+        const playerOneName = document.getElementById('playerO').value;
+        const playerTwoName = document.getElementById('playerX').value;
+
+        const playerOneObj = createPlayer(playerOneName, 'O');
+        const playerTwoObj = createPlayer(playerTwoName, 'X');
+
+        startGame(playerOneObj, playerTwoObj);
     })
-
-
-    const playerOne = createPlayer('Player O', 'O');
-    const playerTwo = createPlayer('Player X', 'X');
-    currentPlayer = playerOne;
 
     gameBoardContainer.addEventListener('click', function(event) {
         if (event.target.classList.contains('grid-cell')) {
@@ -119,6 +141,7 @@ const gameController = (function() {
     })
 
     restartButton.addEventListener('click', () => {
-        
+        gameBoardArray = ['', '', '', '', '', '', '', '', ''];
+        startGame(playerOne, playerTwo);
     })
 })();
